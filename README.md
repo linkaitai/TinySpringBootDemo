@@ -51,11 +51,19 @@ src
 - **Endpoint:** `POST /user/register`
 - **Description:** Registers a new user with a username and password.
 - **Request Parameters:**
+<<<<<<< HEAD
   - `username` (String): The username of the new user.
   - `password` (String): The password for the new user.
 - **Response:** 
   - `200 OK` if the registration is successful.
   - `400 BAD REQUEST` if the username already exists.
+=======
+    - `username` (String): The username of the new user.
+    - `password` (String): The password for the new user.
+- **Response:**
+    - `200 OK` if the registration is successful.
+    - `400 BAD REQUEST` if the username already exists.
+>>>>>>> 0df5395 (加入操作日志功能)
 
 ---
 
@@ -64,11 +72,19 @@ src
 - **Endpoint:** `POST /user/login`
 - **Description:** Authenticates the user and returns a token upon successful login.
 - **Request Parameters:**
+<<<<<<< HEAD
   - `username` (String): The username of the user.
   - `password` (String): The password for the user.
 - **Response:** 
   - `200 OK` with a JWT token if the login is successful.
   - `400 BAD REQUEST` if the user does not exist or the password is incorrect.
+=======
+    - `username` (String): The username of the user.
+    - `password` (String): The password for the user.
+- **Response:**
+    - `200 OK` with a JWT token if the login is successful.
+    - `400 BAD REQUEST` if the user does not exist or the password is incorrect.
+>>>>>>> 0df5395 (加入操作日志功能)
 
 ---
 
@@ -76,10 +92,17 @@ src
 
 - **Endpoint:** `GET /user/userInfo`
 - **Description:** Retrieves the logged-in user's information.
+<<<<<<< HEAD
 - **Headers:** 
   - `Authorization`: The JWT token of the logged-in user.
 - **Response:** 
   - `200 OK` with the user's information.
+=======
+- **Headers:**
+    - `Authorization`: The JWT token of the logged-in user.
+- **Response:**
+    - `200 OK` with the user's information.
+>>>>>>> 0df5395 (加入操作日志功能)
 
 ---
 
@@ -88,9 +111,15 @@ src
 - **Endpoint:** `PUT /user/update`
 - **Description:** Updates the user's profile information.
 - **Request Body:**
+<<<<<<< HEAD
   - JSON representation of the `User` object.
 - **Response:** 
   - `200 OK` if the update is successful.
+=======
+    - JSON representation of the `User` object.
+- **Response:**
+    - `200 OK` if the update is successful.
+>>>>>>> 0df5395 (加入操作日志功能)
 
 ---
 
@@ -98,6 +127,7 @@ src
 
 - **Endpoint:** `PATCH /user/updatePwd`
 - **Description:** Updates the user's password after verifying the old password.
+<<<<<<< HEAD
 - **Headers:** 
   - `Authorization`: The JWT token of the logged-in user.
 - **Request Body:**
@@ -107,6 +137,17 @@ src
 - **Response:** 
   - `200 OK` if the password is updated successfully.
   - `400 BAD REQUEST` if the old password is incorrect or the new passwords do not match.
+=======
+- **Headers:**
+    - `Authorization`: The JWT token of the logged-in user.
+- **Request Body:**
+    - `old_pwd` (String): The old password.
+    - `new_pwd` (String): The new password.
+    - `re_pwd` (String): The confirmation of the new password.
+- **Response:**
+    - `200 OK` if the password is updated successfully.
+    - `400 BAD REQUEST` if the old password is incorrect or the new passwords do not match.
+>>>>>>> 0df5395 (加入操作日志功能)
 
 ---
 

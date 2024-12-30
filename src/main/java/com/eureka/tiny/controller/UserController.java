@@ -1,5 +1,6 @@
 package com.eureka.tiny.controller;
 
+import com.eureka.tiny.anno.Log;
 import com.eureka.tiny.pojo.Result;
 import com.eureka.tiny.pojo.User;
 import com.eureka.tiny.service.UserService;
@@ -7,7 +8,6 @@ import com.eureka.tiny.utils.JwtUtil;
 import com.eureka.tiny.utils.ThreadLocalUtil;
 import jakarta.websocket.OnClose;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.util.StringUtils;
@@ -57,6 +57,7 @@ public class UserController {
         return Result.error("密码错误");
     }
 
+
     @GetMapping("/userInfo")
     public Result<User> userInfo() {
         Map<String, Object> map = ThreadLocalUtil.get();
@@ -65,12 +66,14 @@ public class UserController {
         return Result.success(user);
     }
 
+    @Log
     @PutMapping("/update")
     public Result update(@RequestBody User user) {
         userService.update(user);
         return Result.success();
     }
 
+    @Log
     @PatchMapping("/updatePwd")
     public Result updatePwd(@RequestBody Map<String, String> params, @RequestHeader("Authorization") String token) {
         String oldPwd = params.get("old_pwd");

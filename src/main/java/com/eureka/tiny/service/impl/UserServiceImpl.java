@@ -1,4 +1,4 @@
-package com.eureka.tiny.service.Impl;
+package com.eureka.tiny.service.impl;
 
 import com.eureka.tiny.mapper.UserMapper;
 import com.eureka.tiny.pojo.User;
